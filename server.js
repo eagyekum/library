@@ -7,10 +7,13 @@ const expressLayouts = require("express-ejs-layouts");
 
 //Routes
 const indexRouter = require("./routes/index");
+const authorRouter = require("./routes/authors");
 
+//Middleware
 app.set("view engine", "ejs");
 app.use(expressLayouts);
 app.use(express.static("public"));
+app.use(express.urlencoded({ limit: "10mb", extended: false }));
 
 const mongoose = require("mongoose");
 mongoose
@@ -22,6 +25,7 @@ mongoose
   .catch(err => console.log(err.message));
 
 app.use("/", indexRouter);
+app.use("/authors", authorRouter);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));

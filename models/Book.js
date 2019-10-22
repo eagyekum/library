@@ -11,10 +11,9 @@ const bookSchema = new mongoose.Schema({
   createdAt: { type: Date, required: true, default: Date.now },
   coverImageName: { type: String, required: true },
   author: {
-    //type: mongoose.Schema.Types.ObjectId,
-    type: String
-    //required: true,
-    //ref: "Author"
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: "Author"
   }
 });
 bookSchema.virtual("coverImagePath").get(function() {

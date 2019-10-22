@@ -9,7 +9,7 @@
     <% if (author.id === book.author) { %>
       <option selected label="<%= author.name %>" value="<%= author.id %>" >
     <% } else { %>
-      <option label="<%= author.name %>" value="<%= author.name %>"> %>
+      <option label="<%= author.name %>" value="<%= author.id %>"> %>
       <% } %>
   <% }) %>
     </select>

@@ -8,6 +8,7 @@ const expressLayouts = require("express-ejs-layouts");
 //Routes
 const indexRouter = require("./routes/index");
 const authorRouter = require("./routes/authors");
+const bookRouter = require("./routes/books");
 
 //Middleware
 app.set("view engine", "ejs");
@@ -26,6 +27,7 @@ mongoose
 
 app.use("/", indexRouter);
 app.use("/authors", authorRouter);
+app.use("/books", bookRouter);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));

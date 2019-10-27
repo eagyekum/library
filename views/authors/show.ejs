@@ -1,0 +1,9 @@
+<div>
+  <h1>
+    <%= typeof (author.name != "undefined" )? author.name :"" %>
+  </h1>
+</div>
+<div><h2>Books by <%= author.name %></h2></div>
+<% books.map( book => {%>
+<div><img height="150" width="100" src="<%= book.coverImagePath %>" /></div>
+<%}) %>

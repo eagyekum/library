@@ -6,5 +6,10 @@
 </form>
 <br />
 <% authors.map( author => {%>
-<div><%= author.name %></div>
+<div>
+  <%= author.name %>
+  <a href="/authors/<%= author._id %>">View</a>
+  <a href="/authors/<%= author._id %>/edit">Edit</a>
+  <%- include('../partials/deleteForm', {url: `/authors/${author.id}`}) %>
+</div>
 <%}) %>
